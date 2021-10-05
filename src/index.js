@@ -1,6 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
 const { ApolloServer } = require("apollo-server-express");
 const express = require("express");
+const dotenv = require("dotenv");
 const { readFileSync } = require("fs");
 const expressPlayground =
   require("graphql-playground-middleware-express").default;
@@ -221,6 +222,6 @@ startServer();
 app.get("/", (req, res) => res.end("Congrats you made it."));
 app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
 
-app.listen({ port: 4000 }, () =>
+app.listen({ port: process.env.PORT || 4000 }, () =>
   console.log(`Server running at http://localhost:4000`)
 );
