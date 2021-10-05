@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "darwin", "debian-openssl-1.1.x"]
+}
+
+model Bug {
+  id String @id @default(uuid())
+  name String @unique 
+  slug String @unique
+  value Int
+  location String
+  hoursAM HoursEnum[]
+  hoursPM HoursEnum[]
+  time_range String
+  monthsNorth MonthEnum[]
+  monthsSouth MonthEnum[]
+}
+
+model Fish {
+  id String @id @default(uuid()) 
+  name String @unique
+  slug String @unique
+  shadowSize Int
+  fin Boolean
+  value Int
+  location String
+  hoursAM HoursEnum[]
+  hoursPM HoursEnum[]
+  time_range String
+  monthsNorth MonthEnum[]
+  monthsSouth MonthEnum[]
+}
+
+enum MonthEnum {
+  January
+  February
+  March
+  April
+  May
+  June
+  July
+  August
+  September
+  October
+  November
+  December
+}
+
+enum HoursEnum {
+  One
+  Two
+  Three
+  Four
+  Five
+  Six
+  Seven
+  Eight
+  Nine
+  Ten
+  Eleven
+  Twelve
+}
