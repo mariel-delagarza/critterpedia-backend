@@ -526,6 +526,20 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
+graphql-playground-html@^1.6.29:
+  version "1.6.29"
+  resolved "https://registry.yarnpkg.com/graphql-playground-html/-/graphql-playground-html-1.6.29.tgz#5b0c60a0161cc0f3116085f64c5a16cb3b2d9a16"
+  integrity sha512-fbF/zZKuw2sdfKp8gjTORJ/I9xBsqeEYRseWxBzuR15NHMptRTT9414IyRCs3ognZzUDr5MDJgx97SlLZCtQyA==
+  dependencies:
+    xss "^1.0.6"
+
+graphql-playground-middleware-express@^1.7.22:
+  version "1.7.22"
+  resolved "https://registry.yarnpkg.com/graphql-playground-middleware-express/-/graphql-playground-middleware-express-1.7.22.tgz#e4bbe4faaa56b48e95769c8b87b65e53355d91a4"
+  integrity sha512-PJLiCxLmN6Dp+dHGyHU92m9y3hB/RAkcUBWcqYl2fiP+EbpDDgNfElrsVzW60MhJe+LTV1PFqiInH2d3KNvlCQ==
+  dependencies:
+    graphql-playground-html "^1.6.29"
+
 graphql-tag@^2.11.0:
   version "2.12.5"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.12.5.tgz#5cff974a67b417747d05c8d9f5f3cb4495d0db8f"
@@ -843,7 +857,7 @@ whatwg-url@^5.0.0:
     tr46 "~0.0.3"
     webidl-conversions "^3.0.0"
 
-xss@^1.0.8:
+xss@^1.0.6, xss@^1.0.8:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/xss/-/xss-1.0.9.tgz#3ffd565571ff60d2e40db7f3b80b4677bec770d2"
   integrity sha512-2t7FahYnGJys6DpHLhajusId7R0Pm2yTmuL0GV9+mV0ZlaLSnb2toBmppATfg5sWIhZQGlsTLoecSzya+l4EAQ==
