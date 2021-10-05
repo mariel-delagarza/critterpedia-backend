@@ -209,9 +209,11 @@ async function startServer() {
     context: {
       prisma,
     },
+    playground: true,
+    introspection: true,
   });
   await server.start();
-  server.applyMiddleware({ app });
+  server.applyMiddleware({ path: "/graphql", app });
 }
 
 startServer();
