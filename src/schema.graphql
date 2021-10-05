@@ -1,42 +1,65 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+type Query {
+  getAllBugs: [Bug]
+  getAllFish: [Fish]
+  getBugByName(name: String!): Bug!
+  getFishByName(name: String!): Fish!
+  getBugBySlug(slug: String!): Bug!
+  getFishBySlug(slug: String!): Fish!
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  getBugsByMonthNorth(month: String!): [Bug]!
+  getFishByMonthNorth(month: String!): [Fish]!
+
+  getBugsByMonthSouth(month: String!): [Bug]!
+  getFishByMonthSouth(month: String!): [Fish]!
+
+  getBugsByAmHourMonthNorth(month: String!, hour: String!): [Bug]!
+  getBugsByAmHourMonthSouth(month: String!, hour: String!): [Bug]!
+
+  getFishByAmHourMonthNorth(month: String!, hour: String!): [Fish]!
+  getFishByAmHourMonthSouth(month: String!, hour: String!): [Fish]!
+
+  getBugsByPmHourMonthNorth(month: String!, hour: String!): [Bug]!
+  getBugsByPmHourMonthSouth(month: String!, hour: String!): [Bug]!
+
+  getFishByPmHourMonthNorth(month: String!, hour: String!): [Fish]!
+  getFishByPmHourMonthSouth(month: String!, hour: String!): [Fish]!
+
+  getBugsByTimeRangeMonthNorth(time_range: String!, month: String!): [Bug]!
+  getFishByTimeRangeMonthNorth(time_range: String!, month: String!): [Fish]!
+
+  getBugsByTimeRangeMonthSouth(time_range: String!, month: String!): [Bug]!
+  getFishByTimeRangeMonthSouth(time_range: String!, month: String!): [Fish]!
+
+  getBugsByLocation(location: String!): [Bug!]
+  getFishByLocation(location: String!): [Fish!]
 }
 
-generator client {
-  provider = "prisma-client-js"
-  binaryTargets = ["native", "darwin", "debian-openssl-1.1.x"]
+type Bug {
+  id: ID!
+  name: String!
+  slug: String!
+  value: Int!
+  location: String!
+  hoursAM: [HoursEnum!]
+  hoursPM: [HoursEnum!]
+  time_range: String!
+  monthsNorth: [MonthEnum!]
+  monthsSouth: [MonthEnum!]
 }
 
-model Bug {
-  id String @id @default(uuid())
-  name String @unique 
-  slug String @unique
-  value Int
-  location String
-  hoursAM HoursEnum[]
-  hoursPM HoursEnum[]
-  time_range String
-  monthsNorth MonthEnum[]
-  monthsSouth MonthEnum[]
-}
-
-model Fish {
-  id String @id @default(uuid()) 
-  name String @unique
-  slug String @unique
-  shadowSize Int
-  fin Boolean
-  value Int
-  location String
-  hoursAM HoursEnum[]
-  hoursPM HoursEnum[]
-  time_range String
-  monthsNorth MonthEnum[]
-  monthsSouth MonthEnum[]
+type Fish {
+  id: ID!
+  name: String!
+  slug: String!
+  shadowSize: Int!
+  fin: Boolean!
+  value: Int!
+  location: String!
+  hoursAM: [HoursEnum!]
+  hoursPM: [HoursEnum!]
+  time_range: String!
+  monthsNorth: [MonthEnum!]
+  monthsSouth: [MonthEnum!]
 }
 
 enum MonthEnum {
