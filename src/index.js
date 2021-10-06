@@ -4,6 +4,8 @@ const express = require("express");
 const { readFileSync } = require("fs");
 require("dotenv").config();
 const resolvers = require("./resolvers");
+const cors = require("cors");
+
 const expressPlayground =
   require("graphql-playground-middleware-express").default;
 const path = require("path");
