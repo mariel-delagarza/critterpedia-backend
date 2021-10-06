@@ -1,6 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
 const { ApolloServer } = require("apollo-server");
 const { readFileSync } = require("fs");
+require("dotenv").config();
 const resolvers = require("./resolvers");
 
 const path = require("path");
