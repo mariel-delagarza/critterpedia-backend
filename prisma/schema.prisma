@@ -20,7 +20,7 @@ model Bug {
   location String
   hoursAM HoursEnum[]
   hoursPM HoursEnum[]
-  time_range String
+  timeRange String
   monthsNorth MonthEnum[]
   monthsSouth MonthEnum[]
 }
@@ -35,7 +35,7 @@ model Fish {
   location String
   hoursAM HoursEnum[]
   hoursPM HoursEnum[]
-  time_range String
+  timeRange String
   monthsNorth MonthEnum[]
   monthsSouth MonthEnum[]
 }

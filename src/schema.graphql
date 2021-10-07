@@ -42,7 +42,7 @@ type Bug {
   location: String!
   hoursAM: [HoursEnum!]
   hoursPM: [HoursEnum!]
-  time_range: String!
+  timeRange: String!
   monthsNorth: [MonthEnum!]
   monthsSouth: [MonthEnum!]
 }
@@ -57,7 +57,7 @@ type Fish {
   location: String!
   hoursAM: [HoursEnum!]
   hoursPM: [HoursEnum!]
-  time_range: String!
+  timeRange: String!
   monthsNorth: [MonthEnum!]
   monthsSouth: [MonthEnum!]
 }
